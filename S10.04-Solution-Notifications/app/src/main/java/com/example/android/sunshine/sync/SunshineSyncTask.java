@@ -61,7 +61,7 @@ public class SunshineSyncTask {
              * NullPointerExceptions being thrown. We also have no reason to insert fresh data if
              * there isn't any to insert.
              */
-            if (weatherValues != null && weatherValues.length != 0) {
+         //   if (weatherValues != null && weatherValues.length != 0) {
                 /* Get a handle on the ContentResolver to delete and insert data */
                 ContentResolver sunshineContentResolver = context.getContentResolver();
 
@@ -94,22 +94,22 @@ public class SunshineSyncTask {
                 boolean oneDayPassedSinceLastNotification = false;
 
 //              COMPLETED (14) Check if a day has passed since the last notification
-                if (timeSinceLastNotification >= DateUtils.DAY_IN_MILLIS) {
-                    oneDayPassedSinceLastNotification = true;
-                }
+           //     if (timeSinceLastNotification >= DateUtils.DAY_IN_MILLIS) {
+             //       oneDayPassedSinceLastNotification = true;
+             //   }
 
                 /*
                  * We only want to show the notification if the user wants them shown and we
                  * haven't shown a notification in the past day.
                  */
 //              COMPLETED (15) If more than a day have passed and notifications are enabled, notify the user
-                if (notificationsEnabled && oneDayPassedSinceLastNotification) {
+             //   if (notificationsEnabled && oneDayPassedSinceLastNotification) {
                     NotificationUtils.notifyUserOfNewWeather(context);
-                }
+              //  }
 
             /* If the code reaches this point, we have successfully performed our sync */
 
-            }
+//            }
 
         } catch (Exception e) {
             /* Server probably invalid */
